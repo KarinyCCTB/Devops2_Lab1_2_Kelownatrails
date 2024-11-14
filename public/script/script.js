@@ -152,13 +152,12 @@ function AddGroupMember(lastName, firstName) {
 */
 function RemoveGroupMember() {
 
-	let selectedIndex = membersLst.selectedIndex;
-
-	if (selectedIndex === -1) {
-        	throw "Please select a group member to remove!";
-    	} else {
-        	membersLst.remove(selectedIndex);
+    if (membersLst.selectedIndex === -1) {
+        throw "Please select a group member to delete.";
+    } else {
+        membersLst.remove(membersLst.selectedIndex);
     }
+
 }
 
 /*
