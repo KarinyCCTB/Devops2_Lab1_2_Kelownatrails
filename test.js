@@ -1,5 +1,5 @@
 const {Builder, By, Key, until, Capabilities} = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
+const firefox = require('selenium-webdriver/firefox');
 const chai = require('chai');
 const assert = chai.assert;
 
@@ -7,13 +7,12 @@ let driver;
 
 // Start browser before each test
 before(async () => {
-    // Set up Chrome options for headless mode
-    const options = new chrome.Options();
-    options.addArguments('headless'); // Run Chrome in headless mode
+    const options = new firefox.Options();
+    options.addArguments('-headless');
     options.addArguments('window-size=1200x600'); // Set window size for headless mode
 
     driver = await new Builder()
-        .forBrowser('chrome')
+        .forBrowser('firefox')
         .setChromeOptions(options)
         .build();
 });
