@@ -7,8 +7,8 @@ Instructor: Washington Valencia
 ENTER STUDENT INFORMATION HERE 
 ==========================================
 CCTB project DevOps course
-STUDENT NAME: 
-STUDENT ID:
+STUDENT NAME: Kariny Oliveira
+STUDENT ID: CT1004878
 SQAC114
 ==========================================
 
@@ -152,8 +152,13 @@ function AddGroupMember(lastName, firstName) {
 */
 function RemoveGroupMember() {
 
-	throw "ERROR! You must work in this function before to send to Staging Environment!";
+	let selectedIndex = membersLst.selectedIndex;
 
+	if (selectedIndex === -1) {
+        	throw "Please select a group member to remove!";
+    	} else {
+        	membersLst.remove(selectedIndex);
+    }
 }
 
 /*
